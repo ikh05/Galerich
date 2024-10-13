@@ -34,7 +34,10 @@
           </ul>
         </li> --}}
         <li class="nav-item">
-          <a class="nav-link {{ $title == 'About' ? 'active' : ''}}" href="about">About</a>
+          <a class="nav-link {{ $title == 'Album' ? 'active' : ''}}" href="/album">Album</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ $title == 'About' ? 'active' : ''}}" href="/about">About</a>
         </li>
       </ul>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -47,7 +50,7 @@
         </li>
         
         <li class="nav-item ms-2">
-          <a class="btn btn-outline-info disabled" href="/login"><i class="bi bi-person"></i> Login</a>
+          <a class="btn btn-outline-info disabled" href="/login"><i class="bi bi-box-arrow-in-right"></i> <span class="d-inline d-lg-none">Login</span></a>
         </li>
 
         <li class="nav-item dropdown">

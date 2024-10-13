@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+use App\Models\SocialMedia;
+use App\Models\Image;
+
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -17,12 +20,12 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
+    /*protected $fillable = [
         'name',
         'email',
-        'password',
-    ];
-
+        'password'
+    ];*/
+    protected $guarded = ['id'];
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -44,5 +47,17 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function socialMedia(){
+        return $this->hasMany(SocialMedia::class);
+    }
+
+    public function image(){
+        return $this->hasMany(Image::class);
+    }
+
+    public function lastImage(){
+        return $this->image()->one()->latestOfMany();
     }
 }

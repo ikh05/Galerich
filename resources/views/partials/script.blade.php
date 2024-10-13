@@ -5,19 +5,21 @@
     <script type="text/javascript">
         // swich mode dark-ligth
         const swichMode = document.getElementById('swichMode');
-        swichMode.addEventListener('click', (e)=>{
-            console.log(document.body)
-            if(document.body.hasAttribute('data-bs-theme')) {
-                document.body.removeAttribute('data-bs-theme');
-                document.querySelector('nav a svg g').setAttribute('fill', '#555')
-            }
-            else {
-                document.body.setAttribute('data-bs-theme', 'dark')
-                document.querySelector('nav a svg g').setAttribute('fill', '#fff')
-            };
-            swichMode.classList.toggle('btn-outline-info');
-            swichMode.classList.toggle('btn-info');
-        })
+        if(swichMode !== null){
+            swichMode.addEventListener('click', (e)=>{
+                console.log(document.body)
+                if(document.body.hasAttribute('data-bs-theme')) {
+                    document.body.removeAttribute('data-bs-theme');
+                    document.querySelector('nav a svg g').setAttribute('fill', '#555')
+                }
+                else {
+                    document.body.setAttribute('data-bs-theme', 'dark')
+                    document.querySelector('nav a svg g').setAttribute('fill', '#fff')
+                };
+                swichMode.classList.toggle('btn-outline-info');
+                swichMode.classList.toggle('btn-info');
+            })
+        }
     </script>
   </body>
 </html>
