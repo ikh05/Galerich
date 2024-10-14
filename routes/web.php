@@ -20,4 +20,6 @@ Route::get('/search', [SearchController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
 
 // TES
-Route::get('/tes/1', 'tes');
+Route::get('/tes/1', function (){
+    return view('tes');
+});
